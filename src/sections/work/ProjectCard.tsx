@@ -1,8 +1,10 @@
 import { FaGithub } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import Badge from "../../components/ui/Badge";
 import Button from "../../components/ui/Button";
 import Card from "../../components/ui/Card";
 import type { Project } from "../../types/project";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   project: Project;
@@ -24,7 +26,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         width={640}
       />
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-2">
         <h3 className="min-h-14 overflow-hidden text-xl font-bold leading-7 text-slate-900 [-webkit-box-orient:vertical] [-webkit-line-clamp:2] [display:-webkit-box] dark:text-slate-100">
           {project.title}
         </h3>
@@ -38,7 +40,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="mt-auto flex gap-3 pt-5">
+        <div className="mt-auto flex items-center gap-2 pt-5">
           <Button
             as="a"
             href={project.githubUrl}
@@ -46,7 +48,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             variant="secondary"
             className="flex items-center gap-2"
           >
-            <FaGithub size={22} />
+            <FaGithub size={18} />
             <span>Github</span>
           </Button>
           <Button
@@ -57,6 +59,17 @@ function ProjectCard({ project }: ProjectCardProps) {
           >
             Demo
           </Button>
+          <Link
+            to={`/projects/${project.id}`}
+            className="ml-auto flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition-all duration-200 hover:border-emerald-500 hover:bg-emerald-100 hover:text-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-400 dark:hover:border-emerald-600 dark:hover:bg-emerald-900/40 dark:hover:text-emerald-300"
+            aria-label={`Read more about ${project.title}`}
+          >
+            Read more
+            <FaArrowRight
+              size={12}
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            />
+          </Link>
         </div>
       </div>
     </Card>

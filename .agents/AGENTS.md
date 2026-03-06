@@ -1,6 +1,6 @@
 # Available Skills
 
-Use these skills when generating code:
+Use these skills in skills folder when generating code:
 
 - skills/web-design-guidelines
 - skills/building-components
