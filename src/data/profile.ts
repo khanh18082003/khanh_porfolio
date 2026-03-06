@@ -12,8 +12,8 @@ export const profile: Profile = {
   name: "Nguyen Trung Khanh",
   roleLabel: "Backend Developer",
   summary:
-    "I build high-performance distributed systems, robust APIs, and optimized data layers with a focus on reliability, scalability, and clean architecture.",
-  heroImage: "avatar.png",
+    "I build scalable backend systems and robust RESTful APIs using Java and Spring Boot, with a strong focus on clean architecture, performance, and reliability.",
+  heroImage: "gigapixel-avatar.png",
   email: "nguyentrungk461@gmail.com",
   github: "https://github.com/khanh18082003",
   linkedIn:
