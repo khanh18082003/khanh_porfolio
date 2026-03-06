@@ -2,7 +2,6 @@ import type { IconType } from "react-icons";
 import {
   FaJava,
   FaDocker,
-  FaAws,
   FaReact,
   FaGitAlt,
   FaHtml5,
@@ -17,8 +16,6 @@ import {
   SiMysql,
   SiMongodb,
   SiRedis,
-  SiElasticsearch,
-  SiKubernetes,
   SiTypescript,
   SiTailwindcss,
   SiVite,
