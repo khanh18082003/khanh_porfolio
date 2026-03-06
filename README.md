@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-**https://github.com/khanh18082003/khanh_porfolio**
+**[https://github.com/khanh18082003/khanh_porfolio](https://khanhporfolio.vercel.app/)**
 
 ---
 
