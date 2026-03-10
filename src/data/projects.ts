@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       "Developed a commission management system tamnt.io.vn to track, calculate, and report Shopee Affiliate earnings across multiple payout periods for users.",
     overview:
-      "A production-grade commission management platform that automates the tracking, calculation, and reporting of Shopee Affiliate earnings. The system handles multiple payout periods, real-time notifications, and Excel-based reporting for finance teams.",
+      "Affiliate Tracking & Commission Management Platform is a backend-driven system designed to help affiliate operators manage partner accounts, track commission earnings, and calculate revenue sharing across multiple payout periods. The platform allows the system owner to manage users and their affiliate accounts, track commission earnings from Shopee payouts, and automatically calculate the revenue split between the owner and partners based on predefined commission percentages. By importing payout data from Excel files provided by Shopee, the system automatically processes commission records, stores payout data for each account, and generates payment summaries so users can clearly see the amount they need to settle with the platform owner.",
     image: "/affiliate_management.png",
     techStack: [
       "Java",
@@ -38,9 +38,24 @@ export const projects: Project[] = [
       "Dockerized deployment on Ubuntu/Linux VPS for consistent environments",
     ],
     challenges: [
-      "Handling concurrent payout period updates without data inconsistency — solved with optimistic locking and Redis distributed locks.",
-      "Generating large Excel reports without blocking the main thread — resolved by offloading generation to an async task executor.",
-      "Keeping WebSocket connections stable under load — addressed with a heartbeat mechanism and connection pool tuning.",
+      {
+        problem:
+          "QR-based bank payments are processed outside the system, which means the platform cannot directly control or confirm when a transaction is completed. The system must rely on webhook notifications from the payment provider to detect successful payments.",
+        solution:
+          "A webhook endpoint was implemented to receive payment notifications from the payment provider. The backend verifies the payment by validating critical information such as the transaction reference, payment amount, and payment status before updating the payment record. To prevent incorrect updates, the system ensures that only payments matching the expected amount and reference ID are marked as successful.",
+      },
+      {
+        problem:
+          "Webhook notifications may be delivered multiple times by the payment provider to guarantee delivery. Without proper handling, duplicate webhook calls could result in repeated payment updates or inconsistent payment states.",
+        solution:
+          "Idempotency was implemented in the webhook handler to ensure that duplicate notifications do not cause multiple updates. Each payment record includes a unique transaction reference, and the system checks if a payment with the same reference has already been processed before applying any updates. This ensures that even if the webhook is called multiple times, the payment status will only be updated once, maintaining data integrity.",
+      },
+      {
+        problem:
+          "After a user completes a QR payment, the platform needs to immediately notify the frontend so the payment page can update without requiring manual refresh.",
+        solution:
+          "A WebSocket-based event system was implemented to deliver real-time updates to the client. When the backend confirms a successful payment, it publishes a payment event through WebSocket, allowing the frontend to update the payment status instantly.",
+      },
     ],
   },
   {
@@ -82,9 +97,12 @@ export const projects: Project[] = [
       "AWS S3 for model artifact storage and versioning",
     ],
     challenges: [
-      "Vietnamese text lacks word boundaries — handled with a dedicated tokenizer (RDRSegmenter) before feature extraction.",
-      "Cuckoo Search convergence on a high-dimensional hyperparameter space — mitigated by bounding the search space with domain knowledge.",
-      "PhoBERT fine-tuning on limited GPU resources — resolved with gradient accumulation and mixed-precision training.",
+      {
+        problem:
+          "The dataset was highly imbalanced across the 13 news categories, which led to poor performance on minority classes when using standard training techniques.",
+        solution:
+          "Implemented class weighting in the SVM loss function and used data augmentation techniques to synthetically increase the representation of minority classes. Additionally, the Cuckoo Search Algorithm was employed to find optimal hyperparameters that improved generalization across all classes.",
+      },
     ],
   },
   {
@@ -123,9 +141,24 @@ export const projects: Project[] = [
       "Dockerized services for consistent local and production deployments",
     ],
     challenges: [
-      "Synchronizing real-time quiz state across multiple service instances — solved with Kafka topics as the single source of truth for quiz events.",
-      "Ensuring consistent leaderboard rankings under concurrent submissions — addressed with Redis sorted sets and atomic increment operations.",
-      "Managing inter-service communication latency — mitigated with async messaging via Kafka for non-critical paths and synchronous REST only for critical reads.",
+      {
+        problem:
+          "Synchronizing real-time quiz state across multiple service instances — solved with Kafka topics as the single source of truth for quiz events.",
+        solution:
+          "Implemented a distributed event-driven architecture using Kafka to ensure all service instances have access to the latest quiz state.",
+      },
+      {
+        problem:
+          "Ensuring consistent leaderboard rankings under concurrent submissions — addressed with Redis sorted sets and atomic increment operations.",
+        solution:
+          "Utilized Redis sorted sets to maintain accurate leaderboard positions and implemented atomic increment operations to handle concurrent updates.",
+      },
+      {
+        problem:
+          "Managing inter-service communication latency — mitigated with async messaging via Kafka for non-critical paths and synchronous REST only for critical reads.",
+        solution:
+          "Designed the system with a hybrid approach, using async messaging for non-critical operations and synchronous REST calls for critical data retrieval.",
+      },
     ],
   },
 ];

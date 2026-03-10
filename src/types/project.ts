@@ -19,5 +19,8 @@ export interface Project {
   /** Ordered list of what was built / implemented */
   features?: string[];
   /** Challenges faced and how they were solved */
-  challenges?: string[];
+  challenges?: {
+    problem: string;
+    solution: string;
+  }[];
 }
