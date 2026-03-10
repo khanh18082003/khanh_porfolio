@@ -13,7 +13,6 @@ import Container from "../components/layout/Container";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Badge from "../components/ui/Badge";
-import RevealSection from "../components/layout/RevealSection";
 import { projects } from "../data/projects";
 import Button from "../components/ui/Button";
 import { useEffect } from "react";
@@ -392,7 +391,7 @@ function ProjectDetail() {
 
         <Container>
           <div className="py-10 lg:py-14">
-            <RevealSection>
+            <div>
               <div className="space-y-10">
                 {project.highlights && project.highlights.length > 0 && (
                   <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
@@ -709,7 +708,7 @@ function ProjectDetail() {
                   </div>
                 </section>
               </div>
-            </RevealSection>
+            </div>
           </div>
         </Container>
       </main>
