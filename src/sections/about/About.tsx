@@ -1,27 +1,26 @@
 import Container from "../../components/layout/Container";
 import SectionTitle from "../../components/ui/SectionTitle";
-import { FaUser, FaGraduationCap, FaStar, FaAward } from "react-icons/fa6";
+import { FaStar, FaAward } from "react-icons/fa6";
 import RevealSection from "../../components/layout/RevealSection";
 
 function About() {
   return (
-    <section className="py-16 sm:py-20" id="about">
+    <section className="py-20 sm:py-28" id="about">
       <Container>
         <RevealSection>
-          <SectionTitle title="Introduction" />
-          <div className="mx-auto mt-2 h-1.5 w-20 rounded-full bg-emerald-600" />
+          <SectionTitle
+            label="// about"
+            title="Introduction"
+            subtitle="Backend developer with a passion for building robust, scalable systems."
+          />
 
-          <div className="mt-16 grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
             {/* About Me */}
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center gap-3">
-                <FaUser className="text-2xl text-emerald-600" />
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                  About Me
-                </h3>
-              </div>
-
-              <div className="space-y-6 border-l-2 border-emerald-100 pl-6 text-lg leading-relaxed text-slate-600 dark:border-emerald-900/30 dark:text-slate-400">
+            <div className="space-y-5">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                About Me
+              </h3>
+              <div className="space-y-4 text-[15px] leading-relaxed text-slate-500 dark:text-slate-400">
                 <p>
                   I am a Backend Developer passionate about building scalable
                   and reliable backend systems. I graduated with a B.Eng. in
@@ -29,12 +28,19 @@ function About() {
                 </p>
                 <p>
                   My main focus is developing{" "}
-                  <strong className="text-emerald-500">RESTful APIs</strong> and
-                  backend services using{" "}
-                  <strong className="text-emerald-500">Java</strong> and{" "}
-                  <strong className="text-emerald-500">Spring Boot</strong>. I
-                  enjoy working with databases, optimizing system performance,
-                  and designing clean architectures.
+                  <strong className="font-semibold text-slate-700 dark:text-slate-300">
+                    RESTful APIs
+                  </strong>{" "}
+                  and backend services using{" "}
+                  <strong className="font-semibold text-slate-700 dark:text-slate-300">
+                    Java
+                  </strong>{" "}
+                  and{" "}
+                  <strong className="font-semibold text-slate-700 dark:text-slate-300">
+                    Spring Boot
+                  </strong>
+                  . I enjoy working with databases, optimizing system
+                  performance, and designing clean architectures.
                 </p>
                 <p>
                   I also have experience integrating machine learning models
@@ -46,51 +52,46 @@ function About() {
             </div>
 
             {/* Education */}
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center gap-3">
-                <FaGraduationCap className="text-2xl text-emerald-600" />
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                  Education
-                </h3>
-              </div>
+            <div className="space-y-5">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                Education
+              </h3>
 
-              <div className="rounded-2xl border border-slate-200 border-l-4 border-l-emerald-600 bg-white p-8 shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:border-l-emerald-600 dark:bg-slate-900">
+              <div className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-800/50">
                 <div className="flex flex-col gap-4">
-                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-                    <h4 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">
+                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                    <h4 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                       Posts and Telecommunications Institute of Technology HCM
                       Branch
                     </h4>
-                    <span className="self-start rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:bg-emerald-950/30">
-                      2021 – 2026
+                    <span className="shrink-0 rounded-md bg-blue-50 px-2.5 py-1 font-mono text-xs font-medium text-blue-600 dark:bg-blue-950/30 dark:text-blue-400">
+                      2021 - 2026
                     </span>
                   </div>
 
-                  <div>
-                    <p className="text-lg font-bold text-emerald-600">
-                      Bachelor of Engineering in Information Technology
-                    </p>
-                  </div>
+                  <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                    Bachelor of Engineering in Information Technology
+                  </p>
 
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
-                      <FaStar className="text-lg text-emerald-600" />
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div className="flex items-center gap-3 rounded-lg border border-slate-100 bg-slate-50/80 px-3 py-2.5 dark:border-slate-700 dark:bg-slate-800/60">
+                      <FaStar className="text-sm text-blue-500" />
                       <div>
-                        <p className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">
-                          GPA Score
+                        <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                          GPA
                         </p>
-                        <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                        <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                           3.15 / 4.0
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
-                      <FaAward className="text-lg text-emerald-600" />
+                    <div className="flex items-center gap-3 rounded-lg border border-slate-100 bg-slate-50/80 px-3 py-2.5 dark:border-slate-700 dark:bg-slate-800/60">
+                      <FaAward className="text-sm text-blue-500" />
                       <div>
-                        <p className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">
+                        <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500">
                           Major
                         </p>
-                        <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                        <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                           Software Engineering
                         </p>
                       </div>

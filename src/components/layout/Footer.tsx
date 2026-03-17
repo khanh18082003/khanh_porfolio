@@ -1,13 +1,35 @@
 import Container from "./Container";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { profile } from "../../data/profile";
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white py-10 transition-colors duration-300 dark:border-slate-700 dark:bg-slate-800">
-      <Container>
-        <p className="text-center text-sm text-slate-500 dark:text-slate-500">
-          © {new Date().getFullYear()} Nguyễn Trung Khánh. Built with React,
-          TypeScript, Vite, and TailwindCSS.
+    <footer className="border-t border-slate-200/60 py-8 transition-colors dark:border-slate-800/60">
+      <Container className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p className="text-xs text-slate-400 dark:text-slate-500">
+          &copy; {new Date().getFullYear()} Nguyen Trung Khanh
         </p>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="text-slate-400 transition-colors hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+          >
+            <FaGithub size={16} />
+          </a>
+          <a
+            href={profile.linkedIn}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="text-slate-400 transition-colors hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+          >
+            <FaLinkedin size={16} />
+          </a>
+        </div>
       </Container>
     </footer>
   );

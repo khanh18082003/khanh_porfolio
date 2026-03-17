@@ -28,13 +28,13 @@ type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps;
 
 const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
   primary:
-    "bg-emerald-600 text-white hover:scale-105 hover:bg-emerald-700 hover:shadow-xl focus-visible:outline-emerald-600",
+    "bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600",
   secondary:
-    "border border-slate-300 bg-white text-slate-700 hover:scale-105 hover:shadow-xl hover:border-emerald-600 focus-visible:outline-emerald-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-emerald-500",
+    "border border-slate-200 bg-white/80 text-slate-700 hover:border-blue-400 hover:text-blue-600 focus-visible:outline-blue-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-300 dark:hover:border-blue-500 dark:hover:text-blue-400",
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
 function Button(props: ButtonProps) {
   const { children, className = "", variant = "primary" } = props;

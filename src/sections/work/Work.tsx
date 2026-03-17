@@ -9,28 +9,30 @@ import { FaGithub } from "react-icons/fa6";
 
 function Work() {
   return (
-    <section className="py-16 sm:py-20" id="work">
+    <section className="py-20 sm:py-28" id="work">
       <Container>
         <RevealSection>
           <SectionTitle
-            title="Work"
-            subtitle="Selected backend-focused projects and system design work."
+            label="// projects"
+            title="Selected Work"
+            subtitle="Backend-focused projects and system design work."
           />
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <div className="mt-12 flex flex-col gap-6">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
-          <div className="mt-10 flex justify-center">
+
+          <div className="mt-12 flex justify-center">
             <Button
               as="a"
               href={profile.github}
               target="_blank"
-              className="flex w-fit items-center gap-2"
+              variant="secondary"
             >
-              <FaGithub size={22} />
-              <span>View All Projects</span>
+              <FaGithub size={16} />
+              <span>View All on GitHub</span>
             </Button>
           </div>
         </RevealSection>

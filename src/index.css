@@ -16,11 +16,29 @@
     --scrollbar-track: transparent;
     --scrollbar-thumb: var(--color-slate-300);
     --scrollbar-thumb-hover: var(--color-slate-400);
+    --color-accent: #2563eb;
+    --color-accent-light: #3b82f6;
+    --color-surface: #fafafa;
+    --color-surface-elevated: #ffffff;
+    --color-surface-card: #ffffff;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94a3b8;
+    --color-border: #e2e8f0;
   }
 
   .dark {
     --scrollbar-thumb: var(--color-slate-700);
     --scrollbar-thumb-hover: var(--color-slate-600);
+    --color-accent: #3b82f6;
+    --color-accent-light: #60a5fa;
+    --color-surface: #0c0f17;
+    --color-surface-elevated: #131825;
+    --color-surface-card: #161c2e;
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #94a3b8;
+    --color-text-muted: #64748b;
+    --color-border: #1e293b;
   }
 
   * {
@@ -29,8 +47,8 @@
   }
 
   *::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
 
   *::-webkit-scrollbar-track {
@@ -50,22 +68,42 @@
   }
 
   body {
-    @apply m-0 min-h-screen bg-slate-50 text-slate-700 antialiased transition-colors duration-300;
-    @apply dark:bg-slate-900 dark:text-slate-400;
+    @apply m-0 min-h-screen antialiased;
+    background-color: var(--color-surface);
+    color: var(--color-text-secondary);
     font-family:
-      Inter,
+      "Outfit",
       ui-sans-serif,
       system-ui,
       -apple-system,
-      Segoe UI,
-      Roboto,
-      Helvetica,
-      Arial,
-      "Apple Color Emoji",
-      "Segoe UI Emoji";
+      sans-serif;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   #root {
     @apply min-h-screen;
   }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: white;
+  }
+}
+
+/* Noise grain overlay */
+.grain-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Monospace font for code-like elements */
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }

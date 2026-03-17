@@ -2,6 +2,7 @@
 
 Use these skills in skills folder when generating code:
 
+- skills/re-design
 - skills/web-design-guidelines
 - skills/building-components
 

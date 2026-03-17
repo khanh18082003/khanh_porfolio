@@ -8,7 +8,7 @@ interface CardProps {
 function Card({ children, className = "" }: CardProps) {
   return (
     <article
-      className={`rounded-xl border border-slate-200 bg-white p-4 shadow-lg transition-all duration-300 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800 ${className}`}
+      className={`rounded-2xl border border-slate-200/60 bg-white/70 p-5 backdrop-blur-sm transition-all duration-300 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-800/50 dark:hover:border-slate-700 ${className}`}
     >
       {children}
     </article>

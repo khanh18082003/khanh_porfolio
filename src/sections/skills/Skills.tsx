@@ -6,13 +6,16 @@ import SkillCard from "./SkillCard";
 
 function Skills() {
   return (
-    <section className="py-16 sm:py-20" id="skills">
+    <section className="py-20 sm:py-28" id="skills">
       <Container>
         <RevealSection>
-          <SectionTitle title="Technical Arsenal" />
-          <div className="mx-auto mt-2 h-1.5 w-20 rounded-full bg-emerald-600" />
+          <SectionTitle
+            label="// skills"
+            title="Technical Arsenal"
+            subtitle="Technologies and tools I work with on a daily basis."
+          />
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {skills.map((skill) => (
               <SkillCard key={skill.id} skill={skill} />
             ))}
