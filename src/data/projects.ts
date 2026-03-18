@@ -65,7 +65,7 @@ export const projects: Project[] = [
       "Implemented a Vietnamese news classification system using LinearSVC, optimized with GridSearchCV and Cuckoo Search Algorithm, achieving 87% accuracy on a dataset of 37,000+ news articles across 13 categories.",
     overview:
       "A machine-learning pipeline for classifying Vietnamese news articles at scale. The system combines classical NLP techniques with deep learning (PhoBERT) and a metaheuristic hyperparameter optimizer (Cuckoo Search) to achieve state-of-the-art accuracy on a large real-world dataset.",
-    image: "",
+    image: "/project_2.png",
     techStack: [
       "FastAPI",
       "Scikit-learn",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     ],
     githubUrl:
       "https://github.com/khanh18082003/Document_Classification_With_Cuckoo_Search.git",
-    demoUrl: "#work",
+    demoUrl: "/nckh.pdf",
     highlights: [
       { label: "Accuracy", value: "87%" },
       { label: "Dataset", value: "37,000+ articles" },

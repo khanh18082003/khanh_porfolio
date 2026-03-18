@@ -12,7 +12,7 @@ export const profile: Profile = {
   name: "Nguyen Trung Khanh",
   roleLabel: "Backend Developer",
   summary:
-    "I build scalable backend systems and robust RESTful APIs using Java and Spring Boot, with a strong focus on clean architecture, performance, and reliability.",
+    "I'm a fresher in backend development, passionate about building scalable and efficient applications. I have experience working with Java and Spring Boot, and I'm eager to learn and grow in the field of software development.",
   heroImage: "gigapixel-avatar.png",
   email: "nguyentrungk461@gmail.com",
   github: "https://github.com/khanh18082003",

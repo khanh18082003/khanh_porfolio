@@ -8,6 +8,7 @@ import {
   FaCubes,
   FaArrowsRotate,
   FaPython,
+  FaDatabase,
 } from "react-icons/fa6";
 import {
   SiSpringboot,
@@ -25,6 +26,10 @@ import {
   SiJsonwebtokens,
   SiUbuntu,
   SiSwagger,
+  SiJavascript,
+  SiPostgresql,
+  SiApachekafka,
+  SiSocket,
 } from "react-icons/si";
 import { MdApi } from "react-icons/md";
 import type { SkillCategory } from "../../types/skill";
@@ -49,7 +54,7 @@ const skillIcons: Record<string, { icon: IconType; color: string }> = {
   Redis: { icon: SiRedis, color: "text-red-700" },
   Docker: { icon: FaDocker, color: "text-blue-400" },
   "CI/CD": { icon: FaArrowsRotate, color: "text-green-400" },
-  "Ubuntu/Linux": { icon: SiUbuntu, color: "text-orange-500" },
+  Ubuntu: { icon: SiUbuntu, color: "text-orange-500" },
   React: { icon: FaReact, color: "text-blue-300" },
   TypeScript: { icon: SiTypescript, color: "text-blue-600" },
   TailwindCSS: { icon: SiTailwindcss, color: "text-blue-400" },
@@ -62,6 +67,14 @@ const skillIcons: Record<string, { icon: IconType; color: string }> = {
   "IntelliJ IDEA": { icon: SiIntellijidea, color: "text-blue-500" },
   "VS Code": { icon: BiLogoVisualStudio, color: "text-blue-400" },
   Python: { icon: FaPython, color: "text-yellow-500" },
+  JavaScript: { icon: SiJavascript, color: "text-yellow-500" },
+  SQL: { icon: FaDatabase, color: "text-blue-500" },
+  PostgreSQL: { icon: SiPostgresql, color: "text-blue-600" },
+  "Apache Kafka (basic knowledge)": {
+    icon: SiApachekafka,
+    color: "text-red-500",
+  },
+  "WebSocket (basic knowledge)": { icon: SiSocket, color: "text-blue-500" },
 };
 
 interface SkillCardProps {

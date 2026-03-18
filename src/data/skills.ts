@@ -2,11 +2,26 @@ import type { SkillCategory } from "../types/skill";
 
 export const skills: SkillCategory[] = [
   {
+    id: "programming languages",
+    icon: "🖥️",
+    title: "Programming Languages",
+    skills: ["Java", "TypeScript", "JavaScript", "Python", "SQL", "HTML/CSS"],
+  },
+  {
+    id: "Fundamental Concepts",
+    icon: "📚",
+    title: "Fundamental Concepts",
+    skills: [
+      "Object-Oriented Programming (OOP)",
+      "Data Structures and Algorithms",
+      "SOLID Principles",
+    ],
+  },
+  {
     id: "backend",
     icon: "💻",
     title: "Backend",
     skills: [
-      "Java",
       "Spring Boot",
       "Spring Security",
       "Spring Data JPA",
@@ -14,19 +29,21 @@ export const skills: SkillCategory[] = [
       "Hibernate",
       "REST API",
       "Microservices (basic knowledge)",
+      "Apache Kafka (basic knowledge)",
+      "WebSocket (basic knowledge)",
     ],
   },
   {
     id: "database",
     icon: "🗄️",
     title: "Database",
-    skills: ["MySQL", "MS SQL Server", "MongoDB", "Redis"],
+    skills: ["MySQL", "PostgreSQL", "MS SQL Server", "Redis"],
   },
   {
     id: "devops",
     icon: "🚀",
     title: "DevOps",
-    skills: ["Docker", "CI/CD", "Ubuntu/Linux"],
+    skills: ["Docker", "Ubuntu"],
   },
   {
     id: "frontend",
